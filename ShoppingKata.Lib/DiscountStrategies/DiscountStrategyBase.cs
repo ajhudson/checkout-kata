@@ -30,11 +30,4 @@ public abstract class DiscountStrategyBase : IDiscountStrategy
     /// <param name="items"></param>
     /// <returns></returns>
     protected IReadOnlyList<Item> GetDiscountedItems(IEnumerable<Item> items) => items.Where(i => i.SKU == this.AppliesToSKU).Select(i => i).ToList();
-
-    /// <summary>
-    /// Get the total cost of the items.
-    /// </summary>
-    /// <param name="items"></param>
-    /// <returns></returns>
-    protected int GetTotal(IEnumerable<Item> items) => items.Sum(item => item.UnitPrice);
 }

@@ -1,4 +1,6 @@
-﻿namespace ShoppingKata.Lib;
+﻿using ShoppingKata.Lib.DiscountStrategies;
+
+namespace ShoppingKata.Lib;
 
 /// <summary>
 /// Defines an abstraction for a <see cref="IBasket"/>
@@ -12,10 +14,16 @@ public interface IBasket
     void AddItem(Item item);
 
     /// <summary>
+    /// Add a discount strategy to the basket.
+    /// </summary>
+    /// <param name="discountStrategy"></param>
+    void AddDiscountStrategy(IDiscountStrategy discountStrategy);
+
+    /// <summary>
     /// Calculate total cost of basket.
     /// </summary>
     /// <returns></returns>
-    int CalculateTotalCost();
+    decimal CalculateTotalCost();
     
     /// <summary>
     /// Get the total number of items in the basket

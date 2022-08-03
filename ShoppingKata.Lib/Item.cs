@@ -13,5 +13,5 @@ public class Item
     /// <summary>
     /// The unit price.
     /// </summary>
-    public int UnitPrice { get; init; }
+    public decimal UnitPrice { get; init; }
 }

@@ -20,6 +20,15 @@
         }
 
         /// <summary>
+        /// Calculate the total cost of the basket.
+        /// </summary>
+        /// <returns></returns>
+        public int CalculateTotalCost()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Get the total number of items in the basket.
         /// </summary>
         public int TotalItems => this._items.Count;

@@ -8,10 +8,10 @@ public class Item
     /// <summary>
     /// The stock keeping unit.
     /// </summary>
-    public string SKU { get; init; }
+    public string SKU { get; init; } = string.Empty;
 
     /// <summary>
     /// The unit price.
     /// </summary>
-    public int UnitPrice { get; set; }
+    public int UnitPrice { get; init; }
 }

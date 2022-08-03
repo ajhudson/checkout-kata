@@ -18,11 +18,11 @@ public interface IDiscountStrategy
     /// <summary>
     /// How much to discount by.
     /// </summary>
-    public int DiscountFactor { get; set; }
+    public int DiscountFactor { get; }
     
     /// <summary>
     /// Calculate the discount to apply.
     /// </summary>
     /// <returns></returns>
-    int CalculateDiscountToApply(IEnumerable<Item> items);
+    decimal CalculateDiscountToApply(IEnumerable<Item> items);
 }

@@ -4,7 +4,7 @@ using Shouldly;
 namespace ShoppingKata.Lib.Tests.DiscountStrategies;
 
 [TestFixture]
-public class BulkDiscountStrategyTests
+public class PercentageDiscountStrategyTests
 {
     /// <summary>
     /// The discount strategy for bulk.
@@ -14,18 +14,16 @@ public class BulkDiscountStrategyTests
     [SetUp]
     public void SetUp()
     {
-        this._discountStrategy = new BulkDiscountStrategy();
+        this._discountStrategy = new PercentageDiscountStrategy();
     }
     
     [Test]
-    [TestCase(0, 0, TestName = "0 items of SKU B should result in no discount")]
-    [TestCase(2, 0, TestName = "2 items of SKU B should result in no discount")]
-    [TestCase(3, 5, TestName = "3 items of SKU B should result in a discount of 5")]
-    [TestCase(6, 10, TestName = "6 items of SKU B should result in a discount of 10")]
+    [TestCase(1, 0, TestName = "1 items of SKU D should result in no discount")]
+    [TestCase(2, 27.5, TestName = "2 items of SKU D should result in a discount of 25%")]
     public void ShouldApplyDiscountForBulkStrategy(int itemsInBasket, decimal expectedDiscountAmount)
     {
         // Arrange
-        var skuBItems = ItemsFactory.CreateItems(SKU.B, itemsInBasket);
+        var skuBItems = ItemsFactory.CreateItems(SKU.D, itemsInBasket);
 
         // Act
         var result = this._discountStrategy.CalculateDiscountToApply(skuBItems);

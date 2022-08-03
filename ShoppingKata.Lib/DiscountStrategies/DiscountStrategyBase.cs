@@ -15,12 +15,26 @@ public abstract class DiscountStrategyBase : IDiscountStrategy
     /// <summary>
     /// How much to discount by.
     /// </summary>
-    public int DiscountFactor { get; set; }
+    public abstract int DiscountFactor { get; }
 
     /// <summary>
     /// Calculate the discount to take off the total.
     /// </summary>
     /// <param name="items"></param>
     /// <returns></returns>
-    public abstract int CalculateDiscountToApply(IEnumerable<Item> items);
+    public abstract decimal CalculateDiscountToApply(IEnumerable<Item> items);
+    
+    /// <summary>
+    /// Filter out the discounted items.
+    /// </summary>
+    /// <param name="items"></param>
+    /// <returns></returns>
+    protected IReadOnlyList<Item> GetDiscountedItems(IEnumerable<Item> items) => items.Where(i => i.SKU == this.AppliesToSKU).Select(i => i).ToList();
+
+    /// <summary>
+    /// Get the total cost of the items.
+    /// </summary>
+    /// <param name="items"></param>
+    /// <returns></returns>
+    protected int GetTotal(IEnumerable<Item> items) => items.Sum(item => item.UnitPrice);
 }

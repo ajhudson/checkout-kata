@@ -6,7 +6,17 @@ public abstract class DiscountStrategyBase : IDiscountStrategy
     /// Get the SKU the discount applies to.
     /// </summary>
     public abstract string AppliesToSKU { get; }
-    
+
+    /// <summary>
+    /// The quantity of items required for the promotion to apply.
+    /// </summary>
+    public abstract int QuantityMultiplier { get; }
+
+    /// <summary>
+    /// How much to discount by.
+    /// </summary>
+    public int DiscountFactor { get; set; }
+
     /// <summary>
     /// Calculate the discount to take off the total.
     /// </summary>

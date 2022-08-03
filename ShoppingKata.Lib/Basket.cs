@@ -23,10 +23,7 @@
         /// Calculate the total cost of the basket.
         /// </summary>
         /// <returns></returns>
-        public int CalculateTotalCost()
-        {
-            throw new NotImplementedException();
-        }
+        public int CalculateTotalCost() => this._items.Sum(item => item.UnitPrice);
 
         /// <summary>
         /// Get the total number of items in the basket.

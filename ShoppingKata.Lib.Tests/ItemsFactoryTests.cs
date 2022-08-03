@@ -27,9 +27,9 @@ public class ItemsFactoryTests
     /// <returns></returns>
     private static IEnumerable<TestCaseData> TestDataProvider()
     {
-        yield return new TestCaseData(SKU.A, new Item { SKU = nameof(SKU.A), UnitPrice = UnitPrices.PriceA });
-        yield return new TestCaseData(SKU.B, new Item { SKU = nameof(SKU.B), UnitPrice = UnitPrices.PriceB });
-        yield return new TestCaseData(SKU.C, new Item { SKU = nameof(SKU.C), UnitPrice = UnitPrices.PriceC });
-        yield return new TestCaseData(SKU.D, new Item { SKU = nameof(SKU.D), UnitPrice = UnitPrices.PriceD });
+        yield return new TestCaseData(SKU.A, new Item { SKU = nameof(SKU.A), UnitPrice = UnitPrices.PriceA }).SetName("Should create item A");
+        yield return new TestCaseData(SKU.B, new Item { SKU = nameof(SKU.B), UnitPrice = UnitPrices.PriceB }).SetName("Should create item B");
+        yield return new TestCaseData(SKU.C, new Item { SKU = nameof(SKU.C), UnitPrice = UnitPrices.PriceC }).SetName("Should create item C");
+        yield return new TestCaseData(SKU.D, new Item { SKU = nameof(SKU.D), UnitPrice = UnitPrices.PriceD }).SetName("Should create item D");
     }
 }

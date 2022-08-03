@@ -19,4 +19,22 @@ public static class ItemsFactory
             _ => throw new ArgumentException("Incorrect SKU")
         };
     }
+
+    /// <summary>
+    /// Create multiple items.
+    /// </summary>
+    /// <param name="sku"></param>
+    /// <param name="quantity"></param>
+    /// <returns></returns>
+    public static IEnumerable<Item> CreateItems(SKU sku, int quantity)
+    {
+        var items = new List<Item>();
+
+        for (int i = 0; i < quantity; i++)
+        {
+            items.Add(CreateItem(sku));
+        }
+
+        return items;
+    }
 }

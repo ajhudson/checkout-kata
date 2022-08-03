@@ -21,6 +21,18 @@ public class ItemsFactoryTests
         item.UnitPrice.ShouldBe(expectedItem.UnitPrice);
     }
 
+    [Test]
+    public void ShouldCreateMultipleItems()
+    {
+        // Arrange
+        // Act
+        var items = ItemsFactory.CreateItems(SKU.A, 3).ToList();
+        
+        // Assert
+        items.ShouldNotBeNull();
+        items.Count.ShouldBe(3);
+    }
+
     /// <summary>
     /// Set up test data for parameterised test.
     /// </summary>

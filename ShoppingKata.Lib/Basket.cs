@@ -16,7 +16,7 @@
         /// <param name="item"></param>
         public void AddItem(Item item)
         {
-            throw new NotImplementedException();
+            this._items.Add(item);
         }
 
         /// <summary>
